@@ -1,0 +1,202 @@
+:root {
+    --dark: #374151;
+    --darker: #1F2937;
+    --darkest: #111827;
+    --grey: #6B7280;
+    --pink: #EC4899;
+    --purple: #8B5CF6;
+    --light: #EEE;
+    --green: #34D399;
+    --red: #EF4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fira sans", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(45deg,orange,grey,lightgreen,brown,lightblue);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s infinite ease-in-out;
+    color: #FFF;
+    padding: 20px;
+}
+
+/* Background Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: var(--grey);
+    margin-bottom: 4rem;
+}
+
+#new-task-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+#new-task-input, #task-date, #task-priority {
+    background-color: var(--darker);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--light);
+    font-size: 1rem;
+    border: 2px solid var(--pink);
+    transition: 0.3s ease;
+}
+
+#new-task-input:focus, #task-date:focus, #task-priority:focus {
+    border-color: var(--purple);
+}
+
+#new-task-submit {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: var(--green);
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#new-task-submit:hover {
+    background-color: #22C55E;
+}
+
+/* Task List Styling */
+main {
+    flex: 1;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.task-list {
+    padding: 1rem;
+}
+
+.task-list h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--grey);
+    margin-bottom: 1rem;
+}
+
+/* Task Box */
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--darkest);
+    padding: 1rem;
+    border-radius: 0.7rem;
+    margin-bottom: 1rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+}
+
+/* Task Text */
+.task .content {
+    flex: 1;
+}
+
+.task .content .text {
+    color: var(--light);
+    font-size: 1.2rem;
+    width: 100%;
+    display: block;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+/* Action Buttons */
+.task .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task .actions button {
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Edit Button */
+.task .actions .edit {
+    background-color: var(--purple);
+    color: white;
+    border: 2px solid var(--purple);
+}
+
+.task .actions .edit:hover {
+    background-color: #7C3AED;
+}
+
+/* Speak Button */
+.task .actions .speak {
+    background-color: var(--pink);
+    color: white;
+    border: 2px solid var(--pink);
+}
+
+.task .actions .speak:hover {
+    background-color: #DB2777;
+}
+
+/* Done Button */
+.task .actions .done {
+    background-color: var(--green);
+    color: white;
+    border: 2px solid var(--green);
+}
+
+.task .actions .done:hover {
+    background-color: #22C55E;
+}
+
+/* Delete Button */
+.task .actions .delete {
+    background-color: var(--red);
+    color: white;
+    border: 2px solid var(--red);
+}
+
+.task .actions .delete:hover {
+    background-color: #DC2626;
+}
+
+/* Fade Out Animation */
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
